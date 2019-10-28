@@ -11,6 +11,40 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	cf_t print[] = { {"c", pc}, {"s", ps}, {"d", pd}, {"i", pi}, {NULL, NULL} };
-	va_start(arg, format);
+		va_start(arg, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (0);
+	while (format[con1] != '\0')
+	{
+		if (format[con1] == '%' && format[con1 + 1] != '%')
+		{
+			con2 = 0;
+			flag = 0;
+			while (print[con2].p != NULL)
+			{
+				if (format[con1 + 1] == print[con2].print[0])
+				{
+					lon = lon + print[con2].p(arg);
+					flag = 1;
+					con1++; }
+				con2++;
+			}
+			if (flag == 0)
+			{
+				_putchar (format[con1]);
+				lon = lon + 1; }
+		}
+		else if (format[con1] == '%' && format[con1 + 1] == '%')
+		{
+			_putchar ('%');
+			con1++;
+			lon = lon + 1; }
+		else
+		{
+			_putchar (format[con1]);
+			lon = lon + 1; }
+		con1++;
+	}
+	va_end(arg);
+	return (lon);
+}
