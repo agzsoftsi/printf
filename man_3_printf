@@ -1,0 +1,56 @@
+.TH man 3 "28 october 2018" "0.1" "_printf man page"
+.SH NAME
+.B _printf
+- formatted output conversion
+.SH SYNOPSIS
+#include "holberton.h"
+.br
+\fIint\fR
+.br
+.B printf (\fIconst\fR \fIchar\fR \fI*format\fR, \fI...\fR);
+.SH DESCRIPTION
+The
+.B_printf()
+produces output according to a format as described.
+.SH CONVERSION SPECIFIERS
+The conversion specifiers and their meanings are:
+.TP
+.BR c
+The  int argument is converted to an unsigned char
+.TP
+.B s
+The char * argument is expected to be a pointer to an array of character type (pointer to a string).  Characters from the array are written up to (but not including) a terminating NUL character; if a precision is specified, no more than the number specified are written.  If a precision is given, no null character need be present; if the precision is not specified, or is greater than the size of the array, the array must contain a terminating NUL character.
+.TP
+.B %
+A  `%'  is  written.  No argument is converted. The complete conversion specification is `%%'.
+.TP
+.B d,i
+The  int    argument is converted to signed decimal notation.  The precision, if any, gives the minimum number of digits that  must appear;  if  the converted  value  requires fewer digits, it is padded on the left with zeros. The default precision is 1.  When 0  is printed with an explicit precision 0, the output is empty.
+.SH RETURN VALUE
+Upon successful return, this function returns the number of characters printed (not including the trailing `\\0' used to end output to strings).
+.SH SEE ALSO
+printf(3)
+.SH BUGS
+No known bugs.
+.SH EXAMPLES
+INSTRUCTION: _printf("Let's try to printf a simple sentence.\n");
+OUTPUT:      Let's try to printf a simple sentence.
+
+INSTRUCTION: len = _printf("Let's try to printf a simple sentence.\n");
+	       _printf("Length:[%d, %i]\n", len, len);
+OUTPUT:      Length:[39, 39]
+
+INSTRUCTION: _printf("Negative:[%d]\n", -762534);
+OUTPUT:	     Negative:[-762534]
+
+INSTRUCTION: _printf("Character:[%c]\n", 'H');
+OUTPUT:	     Character:[H]
+     
+INSTRUCTION: _printf("String:[%s]\n", "I am a string !");
+OUTPUT:	     String:[I am a string !]
+
+INSTRUCTION: _printf("Percent:[%%]\n");
+OUTPUT:	     Percent:[%]
+
+.SH AUTHOR
+Carlos Andres Garcia - Orlando Gomez
