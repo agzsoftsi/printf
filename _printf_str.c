@@ -16,7 +16,7 @@
 
 int ps(va_list arg)
 {
-	unsigned int con = 0;
+	int con = 0;
 	char *str;
 
 	str = va_arg(arg, char *);
