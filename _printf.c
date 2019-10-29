@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	cf_t print[] = { {"c", pc}, {"s", ps}, {"d", pd}, {"i", pi}, {NULL, NULL} };
+
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(arg, format);
@@ -43,8 +44,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar (format[con1]);
 			lon = lon + 1; }
-		con1++;
-	}
+		con1++;	}
 	va_end(arg);
 	return (lon);
 }
