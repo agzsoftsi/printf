@@ -7,7 +7,7 @@
  **/
 int _printf(const char *format, ...)
 {
-	unsigned int con1 = 0, con2 = 0, flag, lon = 0;
+	int con1 = 0, con2 = 0, flag, lon = 0;
 	va_list arg;
 
 	cf_t print[] = { {"c", pc}, {"s", ps}, {"d", pd}, {"i", pi}, {NULL, NULL} };
