@@ -21,7 +21,8 @@ int ps(va_list arg)
 
 	str = va_arg(arg, char *);
 	if (str == NULL)
-		str = "(null)";		
+		str = "(null)";
+
 	while (str[con] != '\0')
 	{
 		_putchar(str[con]);
