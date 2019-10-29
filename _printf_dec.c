@@ -16,16 +16,18 @@ int pd(va_list arg)
 {
 	int n, num, ld;
 	int dig;
-	int exp;
-	int con;
+	int exp, con;
+	int val = 1;
 
 	n = va_arg(arg, int);
+	if (n < 0)
+		val = -1;
 	ld = n % 10;
 	con = 1;
 	exp = 1;
 	n = n / 10;
 	num = n;
-	if (num < 0)
+	if (val < 0)
 	{
 		_putchar('-');
 		num = -num;
