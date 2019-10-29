@@ -31,7 +31,7 @@ int pd(va_list arg)
 		num = -num;
 		n = -n;
 		ld = -ld;
-		con++;
+		++con;
 	}
 	if (num > 0)
 	{
@@ -47,7 +47,7 @@ int pd(va_list arg)
 			_putchar(dig + '0');
 			num = num - (dig * exp);
 			exp = exp / 10;
-			con++;
+			++con;
 		}
 	}
 	_putchar(ld + '0');

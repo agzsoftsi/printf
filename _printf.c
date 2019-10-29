@@ -11,9 +11,9 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	cf_t print[] = { {"c", pc}, {"s", ps}, {"d", pd}, {"i", pi}, {NULL, NULL} };
-		va_start(arg, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
+	va_start(arg, format);
 	while (format[con1] != '\0')
 	{
 		if (format[con1] == '%' && format[con1 + 1] != '%')
