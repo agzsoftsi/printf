@@ -15,40 +15,41 @@
 
 int pd(va_list arg)
 {
-	int con = 0, n = va_arg(arg, int);
-	unsigned int num;
-	unsigned int dig;
-	unsigned int i;
-	unsigned int lon;
+	int n, num, ld, dig, exp, con, val = 1;
 
-	lon = n;
+	n = va_arg(arg, int);
 	if (n < 0)
+		val = -1;
+	ld = n % 10;
+	con = 1;
+	exp = 1;
+	n = n / 10;
+	num = n;
+	if (val < 0)
 	{
-		con++;
-		lon = lon * -1;
 		_putchar('-');
-	}
-
-	if (lon == 0)
-	{
+		num = -num;
+		n = -n;
+		ld = -ld;
 		con++;
-		_putchar('0');
-		return (con);
 	}
-
-	i = 1;
-	while ((lon / i) > 9)
+	if (num > 0)
 	{
-		i = i * 10;
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			dig = num / exp;
+			_putchar(dig + '0');
+			num = num - (dig * exp);
+			exp = exp / 10;
+			con++;
+		}
 	}
-	while (i > 0)
-	{
-		num = lon / i;
-		dig = num % 10;
-		con++;
-
-		_putchar(dig + '0');
-		i = (i / 10);
-	}
+	_putchar(ld + '0');
 	return (con);
 }
