@@ -25,7 +25,7 @@ int pi(va_list arg)
 	exp = 1;
 	n = n / 10;
 	num = n;
-	if (ld < 0)
+	if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
