@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * pi - Print integers
+ * pd - Print integers
  * @arg: arguments
  * Return: Number of elements of the integer argument
  * -------------------------------------------------------------
@@ -12,13 +12,15 @@
  * Project Date - 25/10/2019 - 29/10/2019
  * -------------------------------------------------------------
  **/
-int pi(va_list arg)
+int pd(va_list arg)
 {
 	int con = 0, n = va_arg(arg, int);
-	int num, dig, i, lon;
+	unsigned int num;
+	unsigned int dig;
+	unsigned int i;
+	unsigned int lon;
 
 	lon = n;
-	printf("%d", lon);
 	if (n < 0)
 	{
 		con++;
@@ -43,6 +45,7 @@ int pi(va_list arg)
 		num = lon / i;
 		dig = num % 10;
 		con++;
+
 		_putchar(dig + '0');
 		i = (i / 10);
 	}

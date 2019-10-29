@@ -12,13 +12,16 @@
  * Project Date - 25/10/2019 - 29/10/2019
  * ------------------------------------------------------------
  **/
+
 int pd(va_list arg)
 {
 	int con = 0, n = va_arg(arg, int);
-	int num, dig, i, lon;
+	unsigned int num;
+	unsigned int dig;
+	unsigned int i;
+	unsigned int lon;
 
 	lon = n;
-	printf("%d", lon);
 	if (n < 0)
 	{
 		con++;
@@ -43,6 +46,7 @@ int pd(va_list arg)
 		num = lon / i;
 		dig = num % 10;
 		con++;
+
 		_putchar(dig + '0');
 		i = (i / 10);
 	}
