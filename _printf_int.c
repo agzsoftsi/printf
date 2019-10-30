@@ -18,7 +18,7 @@ int pi(va_list arg)
 	int dig;
 	int exp, con;
 	int val = 1;
-	
+
 	n = va_arg(arg, int);
 	if (n < 0)
 		val = -1;

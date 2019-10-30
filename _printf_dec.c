@@ -31,7 +31,7 @@ int pd(va_list arg)
 	if (val < 0)
 	{
 		_putchar('-');
-		num = num * -1;
+		num = -num;
 		n = -n;
 		ld = -ld;
 		con++;
@@ -47,7 +47,7 @@ int pd(va_list arg)
 		while (exp > 0)
 		{
 			dig = num / exp;
-				_putchar(dig  + '0');
+			_putchar(dig  + '0');
 			num = num - (dig * exp);
 			exp = exp / 10;
 			con++;
