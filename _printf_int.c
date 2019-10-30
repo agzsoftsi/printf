@@ -14,10 +14,10 @@
  **/
 int pi(va_list arg)
 {
-	long int n, num, ld;
-	long int dig;
-	long int exp, con;
-	long int val = 1;
+	int n, num, ld;
+	int dig;
+	int exp, con;
+	int val = 1;
 	
 	n = va_arg(arg, int);
 	if (n < 0)
