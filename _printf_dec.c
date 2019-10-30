@@ -10,8 +10,9 @@
  * -------------------------------------------------------------
  * Authors - Carlos Garcia - Orlando Gomez - Cohort 10 - Cali
  * Project Date - 25/10/2019 - 29/10/2019
- * -------------------------------------------------------------
+ * ------------------------------------------------------------
  **/
+
 int pd(va_list arg)
 {
 	long int n, num, ld;
@@ -33,7 +34,7 @@ int pd(va_list arg)
 		num = num * -1;
 		n = -n;
 		ld = -ld;
-		++con;
+		con++;
 	}
 	if (num > 0)
 	{
@@ -49,7 +50,7 @@ int pd(va_list arg)
 				_putchar(dig  + '0');
 			num = num - (dig * exp);
 			exp = exp / 10;
-			++con;
+			con++;
 		}
 	}
 	_putchar(ld + '0');

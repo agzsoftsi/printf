@@ -1,4 +1,4 @@
-.TH man 3 "28 october 2018" "0.1" "_printf man page"
+.TH man 3 "28 october 2018" "0.1" "_printf MAN PAGE"
 .SH NAME
 .B _printf
 - formatted output conversion
@@ -33,24 +33,30 @@ printf(3)
 .SH BUGS
 No known bugs.
 .SH EXAMPLES
-INSTRUCTION: _printf("Let's try to printf a simple sentence.\n");
-OUTPUT:      Let's try to printf a simple sentence.
+.BR INSTRUCTION:
+_printf("Let's try to printf a simple sentence.\n");
+.BR OUTPUT:
+Let's try to printf a simple sentence.
 
-INSTRUCTION: len = _printf("Let's try to printf a simple sentence.\n");
-	       _printf("Length:[%d, %i]\n", len, len);
-OUTPUT:      Length:[39, 39]
+.BR INSTRUCTION:
+_printf("Negative:[%d]\n", -762534);
+.BR OUTPUT:
+Negative:[-762534]
 
-INSTRUCTION: _printf("Negative:[%d]\n", -762534);
-OUTPUT:	     Negative:[-762534]
-
-INSTRUCTION: _printf("Character:[%c]\n", 'H');
-OUTPUT:	     Character:[H]
+.BR INSTRUCTION:
+_printf("Character:[%c]\n", 'H');
+.BR OUTPUT:
+Character:[H]
      
-INSTRUCTION: _printf("String:[%s]\n", "I am a string !");
-OUTPUT:	     String:[I am a string !]
+.BR INSTRUCTION:
+_printf("String:[%s]\n", "I am a string !");
+.BR OUTPUT:
+String:[I am a string !]
 
-INSTRUCTION: _printf("Percent:[%%]\n");
-OUTPUT:	     Percent:[%]
+.BR INSTRUCTION:
+_printf("Percent:[%%]\n");
+.BR OUTPUT:
+Percent:[%]
 
 .SH AUTHOR
 Carlos Andres Garcia - Orlando Gomez
