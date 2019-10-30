@@ -14,10 +14,10 @@
  **/
 int pd(va_list arg)
 {
-	int n, num, ld;
-	int dig;
-	int exp, con;
-	int val = 1;
+	long int n, num, ld;
+	long int dig;
+	long int exp, con;
+	long int val = 1;
 
 	n = va_arg(arg, int);
 	if (n < 0)
@@ -30,7 +30,7 @@ int pd(va_list arg)
 	if (val < 0)
 	{
 		_putchar('-');
-		num = -num;
+		num = num * -1;
 		n = -n;
 		ld = -ld;
 		++con;
@@ -46,7 +46,7 @@ int pd(va_list arg)
 		while (exp > 0)
 		{
 			dig = num / exp;
-			_putchar(dig + '0');
+				_putchar(dig  + '0');
 			num = num - (dig * exp);
 			exp = exp / 10;
 			++con;
